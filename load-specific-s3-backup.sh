@@ -101,7 +101,7 @@ loadCustomerDB () {
 	fi
 
 	if [ -z "$DB_PW" ]; then
-	   DB_PW="tropicana"
+	   DB_PW="fruitloops"
 	fi
 
 	echo "Going to load database for "$CUSTOMER_NAME"..."

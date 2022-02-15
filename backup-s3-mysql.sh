@@ -6,7 +6,7 @@ BACKUP_TARGET=/yourpath/backups/testuser
 DB_USER=testuser
 CUSTOMER_NAME=testuser
 
-# replace newpasswordhere with s3 userpassword
+# newpasswordhere = mysql password
 mysqldump --hex-blob  --max_allowed_packet=1G --routines -u $DB_USER --password=newpasswordhere $DB_USER > $BACKUP_WORK/$CUSTOMER_NAME.mysql
 
 
@@ -19,5 +19,5 @@ FULL_PATH=$BACKUP_TARGET"/"$FILE_NAME
 tar cfzv $FULL_PATH $BACKUP_WORK/*
 
 rm -rfd $BACKUP_WORK/*
-#replace cloudgateinfra with aws url
-s3cmd --config /root/.s3cfg put $FULL_PATH s3://cloudgateinfra/customer-data/$CUSTOMER_NAME/$FILE_NAME
+
+s3cmd --config ~/.s3cfg put $FULL_PATH s3://data/$CUSTOMER_NAME/$FILE_NAME
