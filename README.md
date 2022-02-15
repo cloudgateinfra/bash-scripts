@@ -1,3 +1,3 @@
 # bash-scripts
 
-various bash scripts for sharing and educational purposes
+to invoke shell scripts use ./test-bash-script.sh to use
